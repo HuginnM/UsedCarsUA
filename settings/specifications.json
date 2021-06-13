@@ -1,0 +1,87 @@
+{
+  "description": {
+    "X": [
+      "car",
+      "body",
+      "mileage",
+      "engV",
+      "engType",
+      "registration",
+      "year",
+      "model",
+      "drive",
+      "mean_model_price"
+    ],
+    "final_columns": [
+      "car",
+      "body",
+      "mileage",
+      "engV",
+      "engType",
+      "registration",
+      "year",
+      "model",
+      "drive",
+      "mean_model_price"
+    ],
+    "y": "price",
+    "metrics": "mean_absolute_percentage_error"
+  },
+  "operations":[
+    {
+      "operation_number": 1,
+      "operation_name": "fill_nans",
+      "params": {
+        "in_columns": [
+          "drive",
+          "engV"
+        ],
+        "methods": [
+          "mode",
+          "median"
+        ]
+      }
+    },
+
+    {
+      "operation_number": 2,
+      "operation_name": "handle_outliers",
+      "params": {
+        "in_columns": [
+          "mileage",
+          "engV"
+        ],
+        "modes": [
+          "drop"
+        ],
+        "methods": [
+          "percentile"
+        ],
+        "upper_quantiles": [
+          0.05,
+          0.00
+        ],
+        "lower_quantiles": [
+          0.95,
+          0.99
+        ]
+      }
+    },
+
+    {
+      "operation_number": 3,
+      "operation_name": "encode_labels",
+      "params": {
+        "in_columns": [
+          "car",
+          "body",
+          "engType",
+          "registration",
+          "model",
+          "drive"
+        ]
+
+      }
+    }
+  ]
+}
