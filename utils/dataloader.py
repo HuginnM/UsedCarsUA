@@ -9,18 +9,6 @@ class DataLoader(object):
         self.df = dataset.copy()
 
     def load_data(self):
-        # fill nans
-        self.df['drive'] = self.df['drive'].fillna(self.df['drive'].mode()[0])
-        self.df['engV'] = self.df['engV'].fillna(self.df['engV'].median())
-
-        # remove outliers
-        self.df = self.df[self.df['mileage'].between(
-            self.df['mileage'].quantile(0.05),
-            self.df['mileage'].quantile(0.95))]
-        self.df = self.df[self.df.engV.between(
-            self.df['engV'].quantile(0),
-            self.df['engV'].quantile(0.99))]
-
         # Label Encoder
         for c in self.df.columns:
             if self.df[c].dtype == 'object':
