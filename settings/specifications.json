@@ -9,8 +9,7 @@
       "registration",
       "year",
       "model",
-      "drive",
-      "mean_model_price"
+      "drive"
     ],
     "final_columns": [
       "car",

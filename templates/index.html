@@ -1,0 +1,36 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+The price prediction of used cars in Ukraine
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-auto col-lg-8 mx-lg-auto mx-md-auto">
+            <h1 class="pt-auto pb-10">Welcome to the used cars predictor in Ukraine!</h1>
+
+            <p class="lead">This is web version of predictor. Keep in mind that the 2016 dataset
+                and the predicted price are not entirely up to date.
+                Alternatively, you can add 5y to the age of the car.
+
+            <h2 class="pt-5"><strong>{{ message }}</strong></h2>
+
+            {{ wtf.quick_form(form, form_type='horizontal') }}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

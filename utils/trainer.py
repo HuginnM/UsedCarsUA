@@ -1,5 +1,4 @@
 from xgboost import XGBRegressor
-from sklearn.model_selection import GridSearchCV
 import numpy as np
 from sklearn.metrics import make_scorer
 
