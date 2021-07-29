@@ -75,7 +75,7 @@ the model on it. But this is still a demo version of the project.
   out the cost of a specific car.
   
 
-<img src="images/site.png" alt="Web-site" width="600"/>
+<img src="images/site.png" alt="Web-site" width="400"/>
 
 * The version that works with requests, which accepts external requests to the 
   "\<address\>/predict" address and extracts data in the json format from the request, after 
