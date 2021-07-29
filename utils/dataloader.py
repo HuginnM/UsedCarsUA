@@ -19,15 +19,23 @@ class DataLoader(object):
             self.df = self.df[self.df.engV.between(self.df['engV'].quantile(0), self.df['engV'].quantile(0.99))]
 
         # add mean price at car brand
-        mean_prices = pd.read_csv('data/mean_car_prices.csv', index_col=0, squeeze=True).astype(int)
+        mean_car_prices = pd.read_csv('data/mean_car_prices.csv', index_col=0, squeeze=True).astype(int)
+        mean_model_prices = pd.read_csv('data/mean_model_prices.csv', index_col=0, squeeze=True)
 
-        def mean_apply(x):
-            for value in mean_prices.items():
+        def mean_car_apply(x):
+            for value in mean_car_prices.items():
                 if x == value[0]:
                     return value[1]
 
+        def mean_model_apply(x):
+            for value in mean_model_prices.items():
+                if x == value[0]:
+                    return value[1]
+
+        self.df['mean_car_price'] = self.df.car.apply(mean_car_apply)
+        self.df['mean_model_price'] = self.df.model.apply(mean_model_apply)
+
         # Return right type of the data
-        self.df['mean_model_price'] = self.df.car.apply(mean_apply)
         self.df[['year', 'mean_model_price', 'mileage']] = self.df[
             ['year', 'mean_model_price', 'mileage']].astype(int)
         self.df['engV'] = self.df['engV'].astype(float)
@@ -50,5 +58,5 @@ class DataLoader(object):
         # Change to right order (need for web version)
         self.df = self.df[['car', 'body', 'mileage', 'engV', 'engType',
                                      'registration', 'year', 'model',
-                                     'drive', 'mean_model_price']]
+                                     'drive', 'mean_model_price', 'mean_car_price']]
         return self.df
