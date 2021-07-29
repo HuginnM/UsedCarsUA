@@ -1,6 +1,5 @@
 # Welcome to the project for forecasting prices for used cars in Ukraine
 
----
 The goal of the project was to try to implement 
 the final product in the form of a simple, but 
 independent website with forecasting capabilities, 
@@ -86,9 +85,9 @@ the model on it. But this is still a demo version of the project.
 ### Links
 
 ---
-**[Web version, deployed on AWS](http://usedcarsua-env.eba-wy63zwqy.us-east-1.elasticbeanstalk.com/)**
+* **[Web version, deployed on AWS](http://usedcarsua-env.eba-wy63zwqy.us-east-1.elasticbeanstalk.com/)**
 
----
+
 
 Docker repository:
 * Web version: **huginnm/used_cars_ua:web_version**
