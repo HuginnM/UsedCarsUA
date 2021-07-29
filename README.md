@@ -7,6 +7,7 @@ independent website with forecasting capabilities,
 or an embedded container that, upon request, could 
 make a forecast and return results.
 
+---
 ### This project uses such technologies:
 
 ---
@@ -16,6 +17,7 @@ make a forecast and return results.
 * **Docker** - allows you to pack in a container.
 * **AWS** - deploying a docker-container with a project on Amazon servers.
 
+---
 ### For EDA and Feature engineering:  
 
 ---
@@ -24,15 +26,17 @@ make a forecast and return results.
   the most suitable machine learning model for a specific project.
 * **Matplotlib & Seaborn** - for EDA.
 
+---
 ### Dataset
 
 ---
-This is a [small dataset was found on Kaggle](https://www.kaggle.com/antfarol/car-sale-advertisements)  
+This is a [small dataset was found on Kaggle](https://www.kaggle.com/antfarol/car-sale-advertisements)
 ~ 9500 entries before preprocessing
 and few features - 10 with target feature. Unfortunately, the dataset is for 2016 and therefore the application 
 cannot give a relevant forecast for now. But you can try adding 5 years to the age of the car and this information 
 will become a little more relevant.
 
+---
 ### Prediction accuracy
 
 ---
@@ -40,7 +44,7 @@ After all the manipulations with the dataset
 and the selection of model parameters, it turned out to achieve 
 an accuracy of 87% for cross-validation and 85% for the test sample.
 Which means you can get the approximate cost of your car +/- 7%.  
-![img.png](images/models.png)
+![img.png](images/models.png)  
 These were models without any tuning, the best of them were chosen 
 for further GridSearch of parameters. 
 These models are random forest and gradient boosting. Already after 
@@ -57,11 +61,13 @@ a little modification. Ideally, of course, it would be to write a parser that
 would update the data weekly and the application would automatically retrain 
 the model on it. But this is still a demo version of the project.
 
-
+---
 ### Docker & Flask
 
 ---
 #### The project has 2 versions:
+
+
 * Web version with an expanded website on the AWS, prepackaged in a container, which allows
   you to conveniently make a single request to the server and find 
   out the cost of a specific car.
@@ -75,6 +81,7 @@ the model on it. But this is still a demo version of the project.
   which the dataset is preprocessed, a forecast is made, which is again packed into json and 
   flask the server makes a response with the result.
 
+---
 ### Links
 
 ---
