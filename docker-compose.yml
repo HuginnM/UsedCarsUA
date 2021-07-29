@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    image: huginnm/used_cars_ua:web_version
+    cpu_shares: 100
+    mem_limit: 2621440000
+    ports:
+      - "8000:8000"
+    links:
+      - ucua
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: UsedCarsUA
+        awslogs-region: us-east-1
+        awslogs-stream-prefix: web
