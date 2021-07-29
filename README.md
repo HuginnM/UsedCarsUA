@@ -45,7 +45,7 @@ and the selection of model parameters, it turned out to achieve
 an accuracy of 87% for cross-validation and 85% for the test sample.
 Which means you can get the approximate cost of your car +/- 7%.  
 
-![img.png](images/models.png)  
+<img src="images/models.png" alt="Compare models" width="200"/>
 
 These were models without any tuning, the best of them were chosen 
 for further GridSearch of parameters. 
@@ -75,8 +75,7 @@ the model on it. But this is still a demo version of the project.
   out the cost of a specific car.
   
 
-  ![site](images/site.png)
-
+<img src="images/site.png" alt="Web-site" width="200"/>
 
 * The version that works with requests, which accepts external requests to the 
   "\<address\>/predict" address and extracts data in the json format from the request, after 
