@@ -44,7 +44,9 @@ After all the manipulations with the dataset
 and the selection of model parameters, it turned out to achieve 
 an accuracy of 87% for cross-validation and 85% for the test sample.
 Which means you can get the approximate cost of your car +/- 7%.  
+
 ![img.png](images/models.png)  
+
 These were models without any tuning, the best of them were chosen 
 for further GridSearch of parameters. 
 These models are random forest and gradient boosting. Already after 
