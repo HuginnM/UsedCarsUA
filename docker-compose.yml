@@ -6,8 +6,6 @@ services:
     mem_limit: 2621440000
     ports:
       - "8000:8000"
-    links:
-      - ucua
     logging:
       driver: awslogs
       options:
