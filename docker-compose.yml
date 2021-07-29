@@ -3,7 +3,7 @@ services:
   web:
     image: huginnm/used_cars_ua:web_version
     cpu_shares: 100
-    mem_limit: 2621440000
+    mem_limit: 3621440000
     ports:
       - "8000:8000"
     logging:
